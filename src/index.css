@@ -66,3 +66,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.ant-input {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.ant-input::placeholder {
+  color: #8c8c8c;
+}
