@@ -1,4 +1,3 @@
-// src/pages/Profile.jsx
 import React, { useEffect, useState } from "react";
 import { Button, Typography, Card, message } from "antd";
 import { useNavigate } from "react-router-dom";

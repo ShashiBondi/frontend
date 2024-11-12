@@ -1,4 +1,3 @@
-// src/pages/UpdateProfileInfo.jsx
 import React, { useState } from "react";
 import { Form, Input, Button, Typography, message } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +18,7 @@ const UpdateProfileInfo = () => {
         token
       );
       message.success("Profile updated successfully.");
-      navigate("/profile"); // Redirect to the Profile page on success
+      navigate("/profile");
     } catch (error) {
       message.error("Error updating profile.");
     }

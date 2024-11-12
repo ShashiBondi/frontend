@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Input, Button, Typography, message } from "antd";
@@ -15,12 +14,10 @@ const Login = () => {
     try {
       const response = await login(email, password);
 
-      // Store the token in localStorage
       localStorage.setItem("token", response.data.token);
 
-      // Show success message and redirect to profile
       message.success("Login successful!");
-      navigate("/profile"); // Redirect to profile after successful login
+      navigate("/profile");
     } catch (error) {
       message.error("Error logging in. Check credentials.");
     }

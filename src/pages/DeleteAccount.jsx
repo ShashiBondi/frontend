@@ -1,4 +1,3 @@
-// src/pages/DeleteAccount.jsx
 import React, { useState, useEffect } from "react";
 import { Form, Input, Button, Typography, Modal, message } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +12,6 @@ const DeleteAccount = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch current user email when component mounts
     const fetchUserEmail = async () => {
       const token = localStorage.getItem("token");
       try {

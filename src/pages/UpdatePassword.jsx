@@ -1,4 +1,3 @@
-// src/pages/UpdatePassword.jsx
 import React, { useState } from "react";
 import { Form, Input, Button, message, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -26,12 +25,10 @@ const UpdatePassword = () => {
       );
       message.success("Password updated successfully.");
 
-      // Clear fields after successful update
       setCurrentPassword("");
       setNewPassword("");
       setConfirmPassword("");
 
-      // Log out the user and redirect to login
       localStorage.removeItem("token");
       navigate("/login");
     } catch (error) {
