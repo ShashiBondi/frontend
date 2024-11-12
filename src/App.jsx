@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import UpdatePassword from "./pages/UpdatePassword";
 import UpdateProfileInfo from "./pages/UpdateProfileInfo";
+import DeleteAccount from "./pages/DeleteAccount";
 
 const App = () => {
   const isAuthenticated = localStorage.getItem("token") !== null;
@@ -20,8 +21,6 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-
-        {/* Protected Routes */}
         <Route
           path="/profile"
           element={isAuthenticated ? <Profile /> : <Navigate to="/login" />}
@@ -38,9 +37,16 @@ const App = () => {
             isAuthenticated ? <UpdateProfileInfo /> : <Navigate to="/login" />
           }
         />
-
-        {/* Redirect unknown paths */}
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route
+          path="/delete-account"
+          element={
+            isAuthenticated ? <DeleteAccount /> : <Navigate to="/login" />
+          }
+        />
+        <Route
+          path="*"
+          element={<Navigate to={isAuthenticated ? "/profile" : "/login"} />}
+        />
       </Routes>
     </Router>
   );
